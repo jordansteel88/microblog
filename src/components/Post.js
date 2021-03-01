@@ -61,6 +61,8 @@ const Post = (props) => {
     dispatch(voteAPI(postId, direction));
   }
 
+  if (!post) return <p>Loading</p>;
+
   return (
     <div>
       {isEditing
@@ -72,12 +74,12 @@ const Post = (props) => {
                       toggleIsEditing={toggleIsEditing}
                       vote={vote} />}
       
-      {/* <div>
+      <div>
         <h4>Comments</h4>
         <CommentList comments={post.comments} 
                      removeComment={removeComment} />
         <CommentForm addComment={addComment} />
-      </div> */}
+      </div>
     </div>
   );
 }

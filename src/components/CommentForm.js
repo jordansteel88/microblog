@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Input } from 'reactstrap';
 
-const CommentForm = ({ save }) => {
+const CommentForm = ({ addComment }) => {
   const [comment, setComment] = useState();
 
   const handleChange = (evt) => {
@@ -10,7 +10,7 @@ const CommentForm = ({ save }) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    save(comment);
+    addComment(comment);
     setComment("")
   }
 

@@ -1,9 +1,9 @@
 import React from "react";
 import { Button } from "reactstrap";
 
-const Comment = ({ text, id, deleteComment }) => {
+const Comment = ({ text, id, removeComment }) => {
   const handleDelete = (evt) => {
-    deleteComment(id);
+    removeComment(id);
   }
 
   return (
@@ -12,7 +12,7 @@ const Comment = ({ text, id, deleteComment }) => {
         <Button color="danger" 
                 className="mr-2"
                 onClick={handleDelete}>X</Button>
-        (comment text)
+        {text}
       </p>
     </div>
   )
